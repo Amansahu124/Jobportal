@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5_n(xgrv@l470crfv2=dnwc*35@1*5udnoqx4^#^=@wz(pmbt-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["jobportal-ogsa.onrender.com"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

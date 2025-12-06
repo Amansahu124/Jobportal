@@ -1,0 +1,75 @@
+/* MAIN WRAPPER */
+.job-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+/* CARD BASE STYLING */
+.job-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* HEADER CARD */
+.header-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.company-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+.job-basic-info h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* DESCRIPTION */
+.description-card p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* DETAILS GRID */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+}
+
+.info-grid p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* APPLY BUTTON */
+.apply-card {
+    text-align: center;
+}
+
+.apply-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.apply-btn:hover {
+    background: #0056b3;
+}
