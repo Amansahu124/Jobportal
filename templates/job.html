@@ -1,0 +1,96 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'job.css' %}">
+
+<div class="job-form-container">
+    <h2 class="form-title">Post a New Job Opening</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <div class="form-grid">
+
+            <!-- Job Title -->
+            <div class="form-group">
+                <label>Job Title <span>*</span></label>
+                <input type="text" name="title" required>
+            </div>
+
+            <!-- Company Name -->
+            <div class="form-group">
+                <label>Company <span>*</span></label>
+                <select name="company_name" required>
+                    <option disabled selected>Choose...</option>
+                    {% for comp in company %}
+                    <option value="{{comp.company_name}}">{{comp.company_name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Location -->
+            <div class="form-group full-width">
+                <label>Location <span>*</span></label>
+                <input type="text" name="location" placeholder="City, State, Country" required>
+            </div>
+
+            <!-- Job Type -->
+            <div class="form-group">
+                <label>Job Type <span>*</span></label>
+                <select name="job_type" required>
+                    <option disabled selected>Choose...</option>
+                    <option value="FULL_TIME">Full-time</option>
+                    <option value="PART_TIME">Part-time</option>
+                    <option value="REMOTE">Remote</option>
+                    <option value="INTERNSHIP">Internship</option>
+                    <option value="CONTRACT">Contract</option>
+                </select>
+            </div>
+
+            <!-- Salary -->
+            <div class="form-group">
+                <label>Minimum Salary</label>
+                <input type="number" name="salary_min" placeholder="e.g. 400000">
+            </div>
+
+            <div class="form-group">
+                <label>Maximum Salary</label>
+                <input type="number" name="salary_max" placeholder="e.g. 700000">
+            </div>
+
+            <!-- Skills -->
+            <div class="form-group full-width">
+                <label>Required Skills</label>
+                <textarea name="required_skills" rows="3" placeholder="Python, SQL, Django..."></textarea>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group full-width">
+                <label>Job Description <span>*</span></label>
+                <textarea name="description" rows="5" required></textarea>
+            </div>
+
+            <!-- Deadline -->
+            <div class="form-group">
+                <label>Application Deadline</label>
+                <input type="date" name="deadline">
+            </div>
+
+            <!-- Active -->
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="is_active" checked>
+                    Job is Active
+                </label>
+            </div>
+
+        </div>
+
+        <div class="form-btns">
+            <button type="submit" class="primary-btn">Post Job</button>
+            <button type="reset" class="secondary-btn">Reset</button>
+        </div>
+
+    </form>
+</div>
+{% endblock content %}

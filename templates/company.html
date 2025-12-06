@@ -1,0 +1,98 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'company.css' %}">
+
+<div class="company-form-container">
+    <h2 class="form-title">Register Your Company</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Company Details -->
+        <h3 class="section-heading">Company Information</h3>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Company Name <span>*</span></label>
+                <input type="text" name="company_name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Company Email <span>*</span></label>
+                <input type="email" name="company_email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" name="company_phone">
+            </div>
+
+            <div class="form-group">
+                <label>Location</label>
+                <input type="text" name="company_location">
+            </div>
+
+            <div class="form-group full-width">
+                <label>Company Logo</label>
+                <input type="file" name="company_logo" accept="image/*">
+            </div>
+        </div>
+
+        <!-- About Company -->
+        <h3 class="section-heading">About the Company</h3>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Founded Year</label>
+                <input type="number" name="founded_year" placeholder="e.g. 2010">
+            </div>
+
+            <div class="form-group">
+                <label>Industry</label>
+                <input type="text" name="industry" placeholder="Software Development">
+            </div>
+
+            <div class="form-group full-width">
+                <label>Company Size</label>
+                <select name="company_size">
+                    <option disabled selected>Choose...</option>
+                    <option>1-10 Employees</option>
+                    <option>10-50 Employees</option>
+                    <option>50-200 Employees</option>
+                    <option>200-500 Employees</option>
+                    <option>500+ Employees</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label>Description</label>
+                <textarea name="company_description" rows="3" placeholder="Write about your company..."></textarea>
+            </div>
+        </div>
+
+        <!-- Online Presence -->
+        <h3 class="section-heading">Online Presence</h3>
+
+        <div class="form-grid">
+            <div class="form-group full-width">
+                <label>Website</label>
+                <input type="url" name="website" placeholder="https://example.com">
+            </div>
+
+            <div class="form-group full-width">
+                <label>LinkedIn Page</label>
+                <input type="url" name="linkedin" placeholder="https://linkedin.com/company/...">
+            </div>
+        </div>
+
+        <div class="form-btns">
+            <button type="submit" class="primary-btn">Save Company Profile</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

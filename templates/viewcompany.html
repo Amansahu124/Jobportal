@@ -1,0 +1,80 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'viewcompany.css' %}">
+
+<div class="company-wrapper">
+
+    <!-- ===== Header Card ===== -->
+    <div class="company-card header-card">
+        {% if company.company_logo %}
+            <img src="{{ company.company_logo.url }}" alt="{{ company.company_name }}" class="company-logo">
+        {% else %}
+            <img src="{% static 'default-company.png' %}" alt="{{ company.company_name }}" class="company-logo">
+        {% endif %}
+
+        <div class="company-basic-info">
+            <h2>{{ company.company_name }}</h2>
+            <p>Email: {{ company.company_email }}</p>
+            {% if company.company_phone %}
+                <p>Phone: {{ company.company_phone }}</p>
+            {% endif %}
+            {% if company.company_location %}
+                <p>Location: {{ company.company_location }}</p>
+            {% endif %}
+            {% if company.founded_year %}
+                <p>Founded: {{ company.founded_year }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ===== Description Card ===== -->
+    {% if company.description %}
+    <div class="company-card description-card">
+        <h3>About Us</h3>
+        <p>{{ company.description }}</p>
+    </div>
+    {% endif %}
+
+    <!-- ===== Details Card ===== -->
+    <div class="company-card details-card">
+        <h3>Details</h3>
+        <div class="info-grid">
+            {% if company.industry %}
+                <p><strong>Industry:</strong> {{ company.industry }}</p>
+            {% endif %}
+            {% if company.website %}
+                <p><strong>Website:</strong> <a href="{{ company.website }}" target="_blank">{{ company.website }}</a></p>
+            {% endif %}
+            {% if company.size %}
+                <p><strong>Company Size:</strong> {{ company.size }}</p>
+            {% endif %}
+            {% if company.type %}
+                <p><strong>Company Type:</strong> {{ company.type }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ===== Links Card ===== -->
+    {% if company.linkedin or company.twitter or company.facebook %}
+    <div class="company-card links-card">
+        <h3>Online Presence</h3>
+        <ul class="links-list">
+            {% if company.linkedin %}
+                <li><a href="{{ company.linkedin }}" target="_blank">LinkedIn</a></li>
+            {% endif %}
+            {% if company.twitter %}
+                <li><a href="{{ company.twitter }}" target="_blank">Twitter</a></li>
+            {% endif %}
+            {% if company.facebook %}
+                <li><a href="{{ company.facebook }}" target="_blank">Facebook</a></li>
+            {% endif %}
+        </ul>
+    </div>
+    {% endif %}
+
+</div>
+
+{% endblock %}

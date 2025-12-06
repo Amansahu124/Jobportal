@@ -1,0 +1,32 @@
+{% extends "basic.html" %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'notifications.css' %}">
+
+<div class="notify-wrapper">
+  <div class="notify-container">
+    <!-- notification content -->
+    <h2 class="notify-title">Notifications</h2>
+
+    {% if notifications %}
+        <div class="notify-list">
+            {% for n in notifications %}
+                <div class="notify-item">
+                    <div class="notify-text">
+                        <p class="message">{{ n.message }}</p>
+                        <span class="time">{{ n.time }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="no-notify">No new notifications.</p>
+    {% endif %}
+
+</div>
+</div>
+
+
+{% endblock %}

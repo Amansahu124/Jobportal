@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobPortal</title>
+
+  <link rel="stylesheet" href="{% static 'basic.css' %}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-left">
+    <div class="logo">JobPortal</div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/job/my">Jobs</a></li>
+      <li><a href="/company/viewcompany">Companies</a></li>
+    </ul>
+  </div>
+
+  <!-- Search Bar -->
+<div class="nav-search">
+  <form id="searchForm" action="/">
+    
+    <input type="text" name="keyword" placeholder="Search jobs, companies...">
+
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+
+
+  <ul class="nav-right">
+    <li class="notification">
+      <a href="/notification">
+      <span class="bell">🔔</span>
+      <span class="badge">3</span>
+    </a>
+    </li>
+
+    {% if user.is_authenticated %}
+      <li><a href="/jobseeker/viewprofile/{{user}}">Welcome {{user}}</a></li>
+      <li><a href="/logout">Logout</a></li>
+    {% else %}
+      <li><a href="/register">Register</a></li>
+      <li><a href="/login">Login</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+  © 2025 JobPortal | All Rights Reserved
+</footer>
+
+</body>
+</html>

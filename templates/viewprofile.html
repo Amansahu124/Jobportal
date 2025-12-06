@@ -1,0 +1,114 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'viewprofile.css' %}">
+
+<div class="profile-wrapper">
+
+    <!-- ===== Profile Header ===== -->
+    <div class="profile-card header-card">
+        <img src="{{ profile.profilephoto.url }}" class="profile-img">
+        <h2 class="profile-name">{{ profile.full_name }}</h2>
+        <p class="profile-tag">{{ profile.professionalNo }}</p>
+    </div>
+
+    <!-- ===== Basic Info ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Basic Information</h3>
+
+        <div class="info-grid">
+            <div class="info-row">
+                <span class="label">Full Name</span>
+                <span class="value">{{ profile.full_name }}</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Email</span>
+                <span class="value">{{ profile.email }}</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Phone</span>
+                <span class="value">{{ profile.phoneno }}</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Location</span>
+                <span class="value">{{ profile.location }}</span>
+            </div>
+
+            <div class="info-row full">
+                <span class="label">Address</span>
+                <span class="value">{{ profile.address }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Resume ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Resume</h3>
+        <a href="{{ profile.resume.url }}" class="resume-btn" download>Download Resume</a>
+    </div>
+
+    <!-- ===== Skills ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Skills</h3>
+        <p class="text-block">{{ profile.skills }}</p>
+    </div>
+
+    <!-- ===== Education ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Education</h3>
+        <p class="text-block">{{ profile.education }}</p>
+    </div>
+
+    <!-- ===== Experience ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Experience</h3>
+        <p class="text-block">{{ profile.experience }}</p>
+    </div>
+
+    <!-- ===== Certifications ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Certifications</h3>
+        <p class="text-block">{{ profile.certifications }}</p>
+    </div>
+
+    <!-- ===== Job Preferences ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Job Preferences</h3>
+        <p class="text-block">{{ profile.job_preferences }}</p>
+    </div>
+
+    <!-- ===== Salary Expectations ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Salary Expectations</h3>
+
+        <div class="info-grid">
+            <div class="info-row">
+                <span class="label">Desired Salary</span>
+                <span class="value">{{ profile.desired_salary }}</span>
+            </div>
+
+            <div class="info-row">
+                <span class="label">Expected Salary</span>
+                <span class="value">{{ profile.expected_salary }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Job Type ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Job Type</h3>
+        <p class="text-block">{{ profile.job_type }}</p>
+    </div>
+
+    <!-- ===== Preferred Location ===== -->
+    <div class="profile-card">
+        <h3 class="section-title">Preferred Job Location</h3>
+        <p class="text-block">{{ profile.preferred_location }}</p>
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,162 @@
+/* ===== Hero Section ===== */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #f5f7fa, #e4e9f0); /* light gradient */
+    color: #333;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #0073b1; /* Naukri blue style */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.get-started-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff7e5f;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.get-started-btn:hover {
+    background-color: #feb47b;
+    transform: translateY(-2px);
+}
+
+/* ===== Hero Search Bar ===== */
+.hero-search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.hero-search input {
+    padding: 12px 20px;
+    width: 300px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.hero-search input:focus {
+    border: 1px solid #0073b1;
+}
+
+.hero-search button {
+    padding: 12px 25px;
+    border-radius: 50px;
+    border: none;
+    background-color: #0073b1;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.hero-search button:hover {
+    background-color: #005f8d;
+    transform: translateY(-2px);
+}
+
+/* ===== Job Cards ===== */
+.job-card {
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Job Title */
+.job-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #0073b1;
+}
+
+/* Job Description */
+.job-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Badge for Job Type */
+.badge-jobtype {
+    font-size: 0.8rem;
+    padding: 0.35em 0.6em;
+    border-radius: 0.5rem;
+    background-color: #e0f3ff;
+    color: #0073b1;
+    font-weight: 500;
+}
+
+/* Salary */
+.salary-range {
+    font-size: 0.9rem;
+    color: #28a745;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Job Card Footer Info */
+.job-card .d-flex {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+/* Container title */
+h2 {
+    font-size: 2rem;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-search input {
+        width: 100%;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,137 @@
+/* ===== Container ===== */
+.profile-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ===== Card ===== */
+.profile-card {
+    background: #ffffff;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+    transition: 0.25s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+/* ===== Header Section ===== */
+.header-card {
+    text-align: center;
+    padding: 35px 25px;
+}
+
+.profile-img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0077b6;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #023e8a;
+    margin-bottom: 6px;
+}
+
+.profile-tag {
+    font-size: 16px;
+    color: #555;
+}
+
+/* ===== Section Title ===== */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #0077b6;
+    border-left: 4px solid #0077b6;
+    padding-left: 10px;
+}
+
+/* ===== Grid Layout Info ===== */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.info-row {
+    background: #f8fafc;
+    padding: 12px 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid #0077b6;
+}
+
+.full {
+    grid-column: span 2;
+}
+
+.label {
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
+}
+
+.value {
+    color: #222;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: right;
+}
+
+/* ===== Resume Button ===== */
+.resume-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #0077b6;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.25s ease-in-out;
+}
+
+.resume-btn:hover {
+    background: #023e8a;
+    transform: scale(1.03);
+}
+
+/* ===== Text Blocks ===== */
+.text-block {
+    font-size: 15px;
+    color: #333;
+    background: #f1f5f9;
+    padding: 14px 16px;
+    border-radius: 8px;
+    line-height: 1.7;
+    border-left: 4px solid #0077b6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .profile-name {
+        font-size: 24px;
+    }
+}
