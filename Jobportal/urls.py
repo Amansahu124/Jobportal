@@ -26,10 +26,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include(urls)),
-    path('jobseeker/',include(joburls)),
-    path('job/',include(jobposturls)),
-    path('company/',include(companyurls)),
+    path('', include('accounts.urls')),          # home app
+    path('jobseeker/', include('jobseeker.urls')),
+    path('job/', include('job.urls')),           # job posts
+    path('company/', include('company.urls')),
 ]
 
 if settings.DEBUG:
