@@ -85,14 +85,11 @@ WSGI_APPLICATION = 'Jobportal.wsgi.application'
 # Updated for environment variables (local and Render)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("DB_NAME", "jobportal"),
-        'USER': os.getenv("DB_USER", "root"),
-        'PASSWORD': os.getenv("DB_PASSWORD", "root"),
-        'HOST': os.getenv("DB_HOST", "localhost"),
-        'PORT': os.getenv("DB_PORT", "3306"),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
